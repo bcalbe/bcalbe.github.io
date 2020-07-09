@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Intel depth camera</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-light">
+        <ul>
+<li><a href="#intel-depth-camera">Intel depth camera</a>
+<ul>
+<li><a href="#advantage-of-each-depth-camera">Advantage of each depth camera</a>
+<ul>
+<li><a href="#l515">L515</a></li>
+<li><a href="#d415-d435-and-d455">D415 D435 and D455</a></li>
+<li><a href="#sr305">SR305</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h1 id="intel-depth-camera">Intel depth camera</h1>
+<p>This is the list that I copied from the intel website. It generally illustrate the features of different kinds of depth camera. We can make comparison among these cameras based on this table.</p>
+<h2 id="advantage-of-each-depth-camera">Advantage of each depth camera</h2>
+<h3 id="l515">L515</h3>
+<p>One of the major features of L515 is an impressive edge fidelity – objects are very distinct from their background, and edge lines are clear with minimal noise. It also takes depth images very rapidly, leading to very minimal motion blur when recording moving objects.</p>
+<h3 id="d415-d435-and-d455">D415 D435 and D455</h3>
+<ul>
+<li>
+<p><strong>D455</strong> is largest among these three device and it also has the longest sensing distance due to the larger baseline distance. RGB and depth FOV are also the largest. It use global shutter which will have less motion blur.But the RGB resolution is less than D435 and D415.</p>
+</li>
+<li>
+<p><strong>D435</strong> is smaller than D455 but it has the same depth FOV as D455. It also use global shutter. Although the RGB FOV is smaller than D455, the RGB resolution is higher,up to 1920*1080. It has built in IMU, which can measure the movement of the camera.</p>
+</li>
+<li>
+<p><strong>D415</strong> has smallest depth FOV and RGB FOV. It has same RGB and depth resolution as D435. It use rolling shutter, which will cause some motion blur when capturing moving object. It has samllest pixel size.</p>
+</li>
+</ul>
+<h3 id="sr305">SR305</h3>
+<p>Although SR has the lowest price, but the performance is also the lowest. This device may not fullfill the requirement of our project.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>L515</th>
+<th>D455</th>
+<th>D435i/D435</th>
+<th>D415</th>
+<th>SR305</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Depth Technology</strong></td>
+<td>LiDAR</td>
+<td>Active IR Stereo                   `</td>
+<td>Active IR Stereo</td>
+<td>Active IR Stereo</td>
+<td>Coded Light光</td>
+</tr>
+<tr>
+<td><strong>Image Sensor Technology</strong></td>
+<td>Laser Scanning</td>
+<td>Global Shutter<br>3μm × 3μm   pixel size</td>
+<td>Global Shutter<br>3μm × 3μm  pixel size</td>
+<td>Rolling Shutter<br>1.4μm × 1.4μm  pixel size</td>
+<td>Rolling Shutter<br>3.6μm × 3.6μm  pixel size</td>
+</tr>
+<tr>
+<td><strong>Depth FOV (H × V)</strong></td>
+<td>70° × 55° (±2°)</td>
+<td>86° × 57° (±3°)</td>
+<td>86° × 57° (±3°)</td>
+<td>65°±2° × 40°±1°</td>
+<td>69°±3° × 54°±2°</td>
+</tr>
+<tr>
+<td><strong>Depth Resolution</strong></td>
+<td>1024 × 768</td>
+<td>1280 × 720</td>
+<td>1280 × 720</td>
+<td>1280 × 720</td>
+<td>640 × 480</td>
+</tr>
+<tr>
+<td><strong>Depth Frame Rate</strong></td>
+<td>30 fps</td>
+<td>90 fps</td>
+<td>90 fps</td>
+<td>90 fps</td>
+<td>60 帧fps</td>
+</tr>
+<tr>
+<td><strong>RGB Frame Rate and Resolution</strong></td>
+<td>1920 × 1080, 30 fps</td>
+<td>1280 × 800, 30 fps</td>
+<td>1920 × 1080, 30 fps</td>
+<td>1920 × 1080, 30 fps</td>
+<td>1920 × 1080, 30fps</td>
+</tr>
+<tr>
+<td><strong>RGB Sensor FOV (H × V)</strong></td>
+<td>70(±3) × 43(±2)</td>
+<td>86 × 57(±3)</td>
+<td>69 × 42 (±1)</td>
+<td>69 × 42 (±1)</td>
+<td>68° × 41.5° (±2°)</td>
+</tr>
+<tr>
+<td><strong>Inertial Measurement Unit</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes/—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Minimum Depth Distance (Min-Z)</strong></td>
+<td>0.25 m</td>
+<td>0.4 m</td>
+<td>0.105 m</td>
+<td>0.16 m</td>
+<td>0.2 m</td>
+</tr>
+<tr>
+<td><strong>Maximum range:</strong></td>
+<td>9 m</td>
+<td>20 m</td>
+<td>10 m</td>
+<td>10 m</td>
+<td>1.5 m</td>
+</tr>
+<tr>
+<td><strong>Dimensions (Diameter × H)/(L × D × H)</strong></td>
+<td>61 mm × 26 mm</td>
+<td>124 mm × 26 mm × 29 mm</td>
+<td>90 mm × 25 mm × 25 mm</td>
+<td>99 mm × 20 mm × 23 mm</td>
+<td>139 mm × 26.13 mm × 12 mm</td>
+</tr>
+<tr>
+<td><strong>Connectors</strong></td>
+<td>USB‑C* 3.1 Gen 1*</td>
+<td>USB‑C* 3.1 Gen 1*</td>
+<td>USB‑C* 3.1 Gen 1*</td>
+<td>USB‑C* 3.1 Gen 1*</td>
+<td>USB* 3.1 Gen 1* Micro B</td>
+</tr>
+<tr>
+<td><strong>Use Environment</strong></td>
+<td>Indooe</td>
+<td>Indoor/Ourdoor</td>
+<td>Indoor/Ourdoor</td>
+<td>Indoor/Ourdoor</td>
+<td>Indoor</td>
+</tr>
+</tbody>
+</table>
+<h1 id="conclusion">Conclusion</h1>
+<p>From my understanding, I recommend that we can buy the <strong>D415</strong> camera since the pixel density is the highest. This is because the resolution of these two camera are the same, but D435 has a larger FOV. It means that the pixel density of D415 is higher. Considering that our application is to reconstruct the surface of inkcartridge, higher pixel density means we can get more accurate results. Although D415 use rolling shutter and it doesn't has an IMU, in our application scenario, they will not greatly influence the reconstruction results.</p>
+
+    </body>
+    </html>
