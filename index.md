@@ -42,4 +42,7 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 ### Intel RealSense
 
-[IntelRealsense](file:///D:/workspace/personal%20pages/bcalbe.github.io/Intel_realsense.html)
+[IntelRealsense](https://bcalbe.github.io/Intel_realsense.html)
+
+
+
